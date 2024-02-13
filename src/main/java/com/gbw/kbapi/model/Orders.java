@@ -8,13 +8,16 @@ import lombok.Setter;
 
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
-
+import jakarta.persistence.*;
+@Entity
 @Getter
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
 
 public class Orders {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
     private LocalDateTime timestamp;
     private int userID;

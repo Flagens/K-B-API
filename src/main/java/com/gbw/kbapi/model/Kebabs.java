@@ -8,13 +8,16 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
-
+import jakarta.persistence.*;
+@Entity
 @Getter
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
 
 public class Kebabs {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
     private Meat meat;
     private Bread bread;
